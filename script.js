@@ -11,15 +11,14 @@ let getComputerChoice = () => {
 };
 
 let getHumanChoice = () => {
-  let input = prompt(
-    "Please pic 1 choice: rock, paper, scissors",
-  ).toLowerCase();
-  if (input === "rock" || input === "paper" || input == "scissors") {
-    return input;
-  }
+  let input = "".toLowerCase();
 };
 
 function playGame() {
+  const btnRock = document.querySelector(".rock");
+  const btnPaper = document.querySelector(".paper");
+  const btnScissors = document.querySelector(".scissors");
+
   let humanScore = 0,
     computerScore = 0;
 
@@ -43,11 +42,17 @@ function playGame() {
     console.log(`Score: human: ${humanScore} || computer: ${computerScore}`);
   }
 
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  btnRock.addEventListener("click", (e) => {
+    playRound();
+  });
+
+  btnPaper.addEventListener("click", (e) => {
+    playRound();
+  });
+
+  btnScissors.addEventListener("click", (e) => {
+    playRound();
+  });
 }
 
 playGame();
